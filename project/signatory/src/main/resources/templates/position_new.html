@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Новая должность</title>
+  <style>
+    div {
+      margin-bottom: 10px;
+    }
+    input[type=text] {
+      padding: 5px;
+      border: 2px solid #cccccc;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+    }
+    input[type=text]:focus {
+      border-color: #b0e0e6;
+    }
+    input[type=submit] {
+      padding: 5px 15px;
+      background: #99e0b2;
+      border: 0 none;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<br/>
+<br/>
+<form style="width: 350px; margin: auto; border: solid 1px; padding: 0 1em; background: #b0e0e6"
+    th:method="POST" th:action="@{/position-create}" th:object="${position}">
+  <h3>Новая должность</h3>
+  <label for="plans">Код должности: </label>
+  <input type="text" th:field="*{plans}" id="plans" placeholder="2591"/>
+  <br/>
+  <label for="name">Название должности: </label>
+  <input type="text" th:field="*{name}" id="name" placeholder="Руководитель отдела"/>
+  <br/>
+  <label for="begda">Начало срока действия: </label>
+  <input type="date" th:field="*{begda}" id="begda"/>
+  <br/>
+  <label for="endda">Конец срока действия: </label>
+  <input type="date" th:field="*{endda}" id="endda"/>
+  <br/>
+  <label for="histo">Индикатор записи в историю: </label>
+  <input type="checkbox" th:field="*{histo}" id="histo"/>
+  <br/>
+  <br/>
+  <input style="width: 200px; margin: auto; border: solid 1px; padding: 0 1em; background: #62529c"
+      type="submit" value="Создать должность"/>
+  <br/>
+  <br/>
+</form>
+</body>
+</html>

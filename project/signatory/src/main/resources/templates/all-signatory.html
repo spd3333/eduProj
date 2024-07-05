@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Ответственные пользователи</title>
+  <style type="text/css">
+    TABLE {
+      width: 300px; /* Ширина таблицы */
+      border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    }
+    TD, TH {
+      padding: 3px; /* Поля вокруг содержимого таблицы */
+      border: 1px solid black; /* Параметры рамки */
+    }
+    TH {
+      background: #b0e0e6; /* Цвет фона */
+    }
+  </style>
+</head>
+<body>
+<h2>Подписанты(ответственные пользователи)</h2>
+
+<br>
+<a href="/ui-signatory-new">Создать подписанта</a> <br>
+<br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Табельный номер</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Отчество</th>
+    <th>Дата_рождения</th>
+    <th>Организационная единица</th>
+    <th>Должность</th>
+    <th>Балансовая единица</th>
+    <th>Раздел персонала</th>
+    <th>Категория сотрудников</th>
+    <th>Место возникновения затрат</th>
+    <th>Начало_срока действия</th>
+    <th>Конец_срока действия</th>
+    <th>Индикатор записи в историю</th>
+    <th>Login изменившего запись</th>
+    <th>Дата/время создания записи</th>
+    <th>Дата/время измения записи</th>
+  </tr>
+  <tr th:each="signatory : ${signatories}">
+    <td th:text="${signatory.id}">VALUE</td>
+    <td th:text="${signatory.pernr}">VALUE</td>
+    <td th:text="${signatory.sname}">VALUE</td>
+    <td th:text="${signatory.ename}">VALUE</td>
+    <td th:text="${signatory.pname}">VALUE</td>
+    <td th:text="${signatory.birthDay}">VALUE</td>
+    <td th:text="${signatory.orgeh}">VALUE</td>
+    <td th:text="${signatory.plans}">VALUE</td>
+    <td th:text="${signatory.bukrs}">VALUE</td>
+    <td th:text="${signatory.werks}">VALUE</td>
+    <td th:text="${signatory.persk}">VALUE</td>
+    <td th:text="${signatory.kostl}">VALUE</td>
+    <td th:text="${signatory.begda}">VALUE</td>
+    <td th:text="${signatory.endda}">VALUE</td>
+    <td th:text="${signatory.histo}">VALUE</td>
+    <td th:text="${signatory.uname}">VALUE</td>
+    <td th:text="${signatory.createDateTime}">VALUE</td>
+    <td th:text="${signatory.updateDateTime}">VALUE</td>
+  </tr>
+</table>
+<br>
+<a href="/ui-all-user">Пользователи сервиса</a> <br>
+<br>
+<a href="/ui-all-position">Должности</a> <br>
+<br>
+<a href="/ui-exit">Выход</a>
+</body>
+</html>
+
+
+
+
+

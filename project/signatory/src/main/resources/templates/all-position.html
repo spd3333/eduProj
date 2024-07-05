@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Должности</title>
+  <style type="text/css">
+    TABLE {
+      width: 300px; /* Ширина таблицы */
+      border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    }
+    TD, TH {
+      padding: 3px; /* Поля вокруг содержимого таблицы */
+      border: 1px solid black; /* Параметры рамки */
+    }
+    TH {
+      background: #b0e0e6; /* Цвет фона */
+    }
+  </style>
+</head>
+<body>
+<h2>Должности</h2>
+
+<br>
+<a href="/ui-position-new">Создать новую должность</a> <br>
+<br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Код должности</th>
+    <th>Название должности</th>
+    <th>Начало_срока действия</th>
+    <th>Конец_срока действия</th>
+    <th>Индикатор записи в историю</th>
+    <th>Login изменившего запись</th>
+    <th>Дата/время создания записи</th>
+    <th>Дата/время измения записи</th>
+  </tr>
+  <tr th:each="position : ${positions}">
+    <td th:text="${position.id}">VALUE</td>
+    <td th:text="${position.plans}">VALUE</td>
+    <td th:text="${position.name}">VALUE</td>
+    <td th:text="${position.begda}">VALUE</td>
+    <td th:text="${position.endda}">VALUE</td>
+    <td th:text="${position.histo}">VALUE</td>
+    <td th:text="${position.uname}">VALUE</td>
+    <td th:text="${position.createDateTime}">VALUE</td>
+    <td th:text="${position.updateDateTime}">VALUE</td>
+  </tr>
+</table>
+
+
+<br>
+<a href="/ui-all-user">Пользователи сервиса</a> <br>
+<br>
+<a href="/ui-all-signatory">Ответственные пользователи(Подписанты)</a> <br>
+<br>
+<a href="/ui-exit">Выход</a>
+</body>
+</html>

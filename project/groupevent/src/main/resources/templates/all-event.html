@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Групповые мероприятия</title>
+  <style type="text/css">
+    TABLE {
+      width: 300px; /* Ширина таблицы */
+      border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    }
+    TD, TH {
+      padding: 3px; /* Поля вокруг содержимого таблицы */
+      border: 1px solid black; /* Параметры рамки */
+    }
+    TH {
+      background: #b0e0e6; /* Цвет фона */
+    }
+  </style>
+</head>
+<body>
+<h2>Групповые мероприятия</h2>
+
+<br>
+<a href="/ui-group-event-new">Создать групповое мероприятие</a> <br>
+<br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Код группы</th>
+    <th>Тип группы</th>
+    <th>Наименование группы командировок</th>
+    <th>Информация о мероприятии</th>
+    <th>Страна</th>
+    <th>Место проведения мероприятия(город командировки)</th>
+    <th>Регион</th>
+    <th>Ответственное подразделение</th>
+    <th>Дата начала мероприятия</th>
+    <th>Дата завершения мероприятия</th>
+    <th>Крайний срок создания командировки на мероприятие(дедлайн)</th>
+    <th>Подписант мероприятия(Id)</th>
+    <th>Подписант мероприятия(табельный номер)</th>
+    <th>Активировано(запрет на изменения)</th>
+    <th>Имя исполнителя создавшего объект</th>
+    <th>Login изменившего запись</th>
+    <th>Дата/время создания записи</th>
+    <th>Дата/время измения записи</th>
+  </tr>
+  <tr th:each="event : ${events}">
+    <td th:text="${event.id}">VALUE</td>
+    <td th:text="${event.code}">VALUE</td>
+    <td th:text="${event.type}">VALUE</td>
+    <td th:text="${event.name}">VALUE</td>
+    <td th:text="${event.info}">VALUE</td>
+    <td th:text="${event.country}">VALUE</td>
+    <td th:text="${event.city}">VALUE</td>
+    <td th:text="${event.region}">VALUE</td>
+    <td th:text="${event.sbt}">VALUE</td>
+    <td th:text="${event.begda}">VALUE</td>
+    <td th:text="${event.endda}">VALUE</td>
+    <td th:text="${event.deadline}">VALUE</td>
+    <td th:text="${event.signerId}">VALUE</td>
+    <td th:text="${event.signer}">VALUE</td>
+    <td th:text="${event.activ}">VALUE</td>
+    <td th:text="${event.organizer}">VALUE</td>
+    <td th:text="${event.uname}">VALUE</td>
+    <td th:text="${event.createDateTime}">VALUE</td>
+    <td th:text="${event.updateDateTime}">VALUE</td>
+  </tr>
+</table>
+<br>
+
+<a href="/ui-exit">Выход</a>
+</body>
+</html>

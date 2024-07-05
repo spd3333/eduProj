@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Ответственные пользователи</title>
+  <style type="text/css">
+    TABLE {
+      width: 300px; /* Ширина таблицы */
+      border-collapse: collapse; /* Убираем двойные линии между ячейками */
+    }
+    TD, TH {
+      padding: 3px; /* Поля вокруг содержимого таблицы */
+      border: 1px solid black; /* Параметры рамки */
+    }
+    TH {
+      background: #b0e0e6; /* Цвет фона */
+    }
+  </style>
+</head>
+<body>
+<h2>Справочник Подписанты из сервиса Sygnatory</h2>
+
+<br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Табельный номер</th>
+    <th>Фамилия</th>
+    <th>Имя</th>
+    <th>Отчество</th>
+    <th>Должность</th>
+    <th>Начало_срока действия</th>
+    <th>Конец_срока действия</th>
+  </tr>
+  <tr th:each="signatory : ${signatories}">
+    <td th:text="${signatory.id}">VALUE</td>
+    <td th:text="${signatory.pernr}">VALUE</td>
+    <td th:text="${signatory.sname}">VALUE</td>
+    <td th:text="${signatory.ename}">VALUE</td>
+    <td th:text="${signatory.pname}">VALUE</td>
+    <td th:text="${signatory.plans}">VALUE</td>
+    <td th:text="${signatory.begda}">VALUE</td>
+    <td th:text="${signatory.endda}">VALUE</td>
+  </tr>
+</table>
+<br>
+<a href="/ui-group-event-new">Назад к созданию группового мероприятия</a> <br>
+<br>
+<a href="/ui-exit">Выход</a>
+</body>
+</html>
+
+
+
+
+

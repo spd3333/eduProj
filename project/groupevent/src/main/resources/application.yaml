@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: GroupEvent
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
